@@ -1,0 +1,40 @@
+# --- Format ---
+#  <Type>(<Scope>): <Subject>
+#
+#  <Body> (optional)
+#
+#  <Footer> (optional)
+#
+# --- Example ---
+#  feat: implementation login api functions
+#
+#  - integration login apis
+#  - add login api functions
+#
+#  Jira #xxxx
+#
+# --- <Type> ---
+#  feat     : new feature
+#  fix      : bug fix
+#  refactor : refactoring production code
+#  style    : coding style formatting
+#  docs     : change documentations
+#  test     : add or modify tests; no production code change
+#  perf     : performance optimize
+#  ci       : ci configuration setup
+#  add      : add files, e.g.: asset, project files, ...; no production code change
+#  lib      : add or modify 3rd party library
+#  wip      : work in progress commit to be squashed -- do not push!
+#
+# --- <Scope> ---
+#  change scope, e.g.: Login, Profile, ...; optional
+#
+# --- <Subject> ---
+#  summarize the change; optional
+#
+# --- <Body> ---
+#  change detail; optional
+#
+# --- <Footer> ---
+#  task or issue ID, e.g.: Jira #127
+#
