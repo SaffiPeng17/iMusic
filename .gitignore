@@ -1,0 +1,5 @@
+.DS_Store
+Pods/
+iMusic.xcworkspace/xcuserdata/
+IDEWorkspaceChecks.plist
+xcschememanagement.plist
