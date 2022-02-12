@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0435DB5C27B825D10021488D /* ApiRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB5B27B825D10021488D /* ApiRequests.swift */; };
+		0435DB5F27B827CE0021488D /* AppConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB5E27B827CE0021488D /* AppConfigs.swift */; };
+		0435DB6127B836B30021488D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB6027B836B30021488D /* NetworkManager.swift */; };
+		0435DB6427B83AD90021488D /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB6327B83AD90021488D /* TrackModel.swift */; };
 		043617A027B6DF55009B977F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436179F27B6DF55009B977F /* AppDelegate.swift */; };
 		043617A227B6DF55009B977F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043617A127B6DF55009B977F /* SceneDelegate.swift */; };
 		043617A427B6DF55009B977F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043617A327B6DF55009B977F /* ViewController.swift */; };
@@ -39,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0435DB5B27B825D10021488D /* ApiRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequests.swift; sourceTree = "<group>"; };
+		0435DB5E27B827CE0021488D /* AppConfigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigs.swift; sourceTree = "<group>"; };
+		0435DB6027B836B30021488D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0435DB6327B83AD90021488D /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
 		0436179C27B6DF55009B977F /* iMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0436179F27B6DF55009B977F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		043617A127B6DF55009B977F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +124,32 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		0435DB5A27B820840021488D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0435DB5B27B825D10021488D /* ApiRequests.swift */,
+				0435DB6027B836B30021488D /* NetworkManager.swift */,
+				0435DB6227B8394E0021488D /* Responses */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0435DB5D27B827BA0021488D /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				0435DB5E27B827CE0021488D /* AppConfigs.swift */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		0435DB6227B8394E0021488D /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				0435DB6327B83AD90021488D /* TrackModel.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
 		0436179327B6DF55009B977F = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +177,8 @@
 			children = (
 				0436179F27B6DF55009B977F /* AppDelegate.swift */,
 				043617A127B6DF55009B977F /* SceneDelegate.swift */,
+				0435DB5D27B827BA0021488D /* Configs */,
+				0435DB5A27B820840021488D /* Network */,
 				0435DB5727B6FBD60021488D /* ViewControllers */,
 				0435DB5827B6FBF70021488D /* Resource */,
 				043617A827B6DF56009B977F /* Assets.xcassets */,
@@ -430,8 +466,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0435DB6127B836B30021488D /* NetworkManager.swift in Sources */,
 				043617A427B6DF55009B977F /* ViewController.swift in Sources */,
+				0435DB6427B83AD90021488D /* TrackModel.swift in Sources */,
 				043617A027B6DF55009B977F /* AppDelegate.swift in Sources */,
+				0435DB5C27B825D10021488D /* ApiRequests.swift in Sources */,
+				0435DB5F27B827CE0021488D /* AppConfigs.swift in Sources */,
 				043617A227B6DF55009B977F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
