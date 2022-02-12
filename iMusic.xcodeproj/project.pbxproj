@@ -91,6 +91,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0435DB5727B6FBD60021488D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				043617A327B6DF55009B977F /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0435DB5827B6FBF70021488D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				0435DB5927B6FC0B0021488D /* Storyboards */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		0435DB5927B6FC0B0021488D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				043617A527B6DF55009B977F /* Main.storyboard */,
+				043617AA27B6DF56009B977F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		0436179327B6DF55009B977F = {
 			isa = PBXGroup;
 			children = (
@@ -118,10 +143,9 @@
 			children = (
 				0436179F27B6DF55009B977F /* AppDelegate.swift */,
 				043617A127B6DF55009B977F /* SceneDelegate.swift */,
-				043617A327B6DF55009B977F /* ViewController.swift */,
-				043617A527B6DF55009B977F /* Main.storyboard */,
+				0435DB5727B6FBD60021488D /* ViewControllers */,
+				0435DB5827B6FBF70021488D /* Resource */,
 				043617A827B6DF56009B977F /* Assets.xcassets */,
-				043617AA27B6DF56009B977F /* LaunchScreen.storyboard */,
 				043617AD27B6DF56009B977F /* Info.plist */,
 			);
 			path = iMusic;
@@ -164,7 +188,6 @@
 				FD2AEEC4C688AEA3A42038F9 /* Pods-iMusicTests.debug.xcconfig */,
 				D9FD4683A60534F7FB8B079A /* Pods-iMusicTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
