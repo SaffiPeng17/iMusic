@@ -13,9 +13,9 @@ struct SearchResult: Codable {
 }
 
 struct TrackModel: Codable {
-    var artistName: String
-    var trackName: String
-    var previewUrl: String      // audition source
-    var artworkUrl100: String   // album cover
+    var artistName: String?
+    var trackName: String?
+    var previewUrl: String?     // audition source
+    var artworkUrl100: String?  // album cover
     var longDescription: String?
 }
