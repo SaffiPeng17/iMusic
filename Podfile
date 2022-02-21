@@ -12,6 +12,7 @@ target 'iMusic' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RealmSwift'
+  pod 'Kingfisher'
 
   target 'iMusicTests' do
     inherit! :search_paths
