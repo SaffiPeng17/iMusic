@@ -33,6 +33,12 @@ class ViewController: UIViewController {
         return view
     }()
 
+    private lazy var miniPlayer: MiniPlayerView = {
+        let view = MiniPlayerView()
+        view.isHidden = true
+        return view
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -44,6 +50,7 @@ class ViewController: UIViewController {
 
         view.addSubview(searchBar)
         view.addSubview(collecionView)
+        view.addSubview(miniPlayer)
 
         searchBar.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
@@ -53,6 +60,13 @@ class ViewController: UIViewController {
         collecionView.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom)
             make.leading.trailing.bottom.equalToSuperview()
+        }
+
+        miniPlayer.snp.makeConstraints { make in
+            make.leading.equalTo(10)
+            make.trailing.equalTo(-10)
+            make.bottom.equalTo(-70)
+            make.height.equalTo(52)
         }
     }
 
@@ -67,7 +81,8 @@ class ViewController: UIViewController {
                 self?.viewModel.searchMusic(keyword: text)
             }.disposed(by: disposeBag)
 
-        viewModel.reloadData.observe(on: MainScheduler.instance)
+        viewModel.reloadData
+            .observe(on: MainScheduler.instance)
             .subscribe { [weak self] _ in
                 self?.collecionView.reloadData()
             }.disposed(by: disposeBag)
@@ -88,5 +103,14 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
             trackCell.setupViewModel(cellVM)
         }
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cellVM = viewModel.cellViewModel(at: indexPath) else {
+            return
+        }
+        let vm = MiniPlayerVM(trackModel: cellVM.trackModel)
+        miniPlayer.setupViewModel(vm)
+        miniPlayer.isHidden = false
     }
 }

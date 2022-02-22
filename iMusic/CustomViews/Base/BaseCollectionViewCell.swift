@@ -8,10 +8,6 @@
 import Foundation
 import RxSwift
 
-class BaseViewModel {
-    init() {}
-}
-
 protocol CellViewModelProtocol {
     var cellIdentifier: String { get }
 }
@@ -20,18 +16,10 @@ class ViewCellModel: BaseViewModel, CellViewModelProtocol {
     var cellIdentifier: String = "ViewCellModel"
 }
 
-protocol CellViewProtocol: AnyObject {
-    func setupViews()
-    func setupViewModel(_ viewModel: BaseViewModel)
-    func setupBinding()
-    func updateViews()
-}
-
-class BaseCollectionViewCell<T: BaseViewModel>: UICollectionViewCell, CellViewProtocol {
+class BaseCollectionViewCell<T: BaseViewModel>: UICollectionViewCell, ViewSetupProtocol {
 
     var disposeBag = DisposeBag()
 
-    typealias ViewModelType = BaseViewModel
     private(set) var viewModel: T! {
         willSet {
             self.disposeBag = DisposeBag()
@@ -62,7 +50,7 @@ class BaseCollectionViewCell<T: BaseViewModel>: UICollectionViewCell, CellViewPr
         return layoutAttributes
     }
 
-    // MARK: CellViewProtocol
+    // MARK: CellViewSetupProtocol
     func setupViews() {}
 
     func setupViewModel(_ viewModel: BaseViewModel) {
