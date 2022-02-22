@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         setupBinding()
     }
 
-    func setupViews() {
+    private func setupViews() {
         title = "iTunes Music"
 
         view.addSubview(searchBar)
@@ -70,7 +70,7 @@ class ViewController: UIViewController {
         }
     }
 
-    func setupBinding() {
+    private func setupBinding() {
         searchBar.searchTextField.rx.text.orEmpty
             .throttle(.microseconds(500), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
@@ -86,9 +86,26 @@ class ViewController: UIViewController {
             .subscribe { [weak self] _ in
                 self?.collecionView.reloadData()
             }.disposed(by: disposeBag)
+
+        miniPlayer.tapped
+            .observe(on: MainScheduler.instance)
+            .subscribe { [weak self] _ in
+                self?.openAudioPlayer()
+            }.disposed(by: disposeBag)
+    }
+
+    private func openAudioPlayer() {
+        guard let playerViewModel = miniPlayer.viewModel else {
+            return
+        }
+        let player = miniPlayer.player
+        let playerVC = PlayerViewController(with: playerViewModel, player: player)
+        let navigationVC = UINavigationController(rootViewController: playerVC)
+        present(navigationVC, animated: true, completion: nil)
     }
 }
 
+// MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems()

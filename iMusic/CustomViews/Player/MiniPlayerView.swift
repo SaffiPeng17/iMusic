@@ -58,12 +58,16 @@ class MiniPlayerView: BaseView<MiniPlayerVM> {
 
     private lazy var playProgress: UIProgressView = {
         let view = UIProgressView(progressViewStyle: .default)
-        view.trackTintColor = UIColor(hex: 0x3F3E45)
+        view.trackTintColor = UIColor(hex: 0xD3D3D3)
         view.progressTintColor = .white
         return view
     }()
 
-    private let player = MiniPlayer()
+    let player = MiniPlayer()
+
+    private let tapGesture = UITapGestureRecognizer()
+
+    let tapped = PublishRelay<Void>()
 
     override func setupViews() {
         super.setupViews()
@@ -118,6 +122,8 @@ class MiniPlayerView: BaseView<MiniPlayerVM> {
             make.leading.trailing.equalTo(trackName)
             make.height.equalTo(16)
         }
+
+        addGestureRecognizer(tapGesture)
     }
 
     override func setupViewModel(_ viewModel: BaseViewModel) {
@@ -128,6 +134,10 @@ class MiniPlayerView: BaseView<MiniPlayerVM> {
     override func setupBinding() {
         super.setupBinding()
 
+        tapGesture.rx.event.subscribe { [weak self] _ in
+            self?.tapped.accept(())
+        }.disposed(by: disposeBag)
+
         player.isBuffering
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] buffering in
@@ -135,7 +145,6 @@ class MiniPlayerView: BaseView<MiniPlayerVM> {
                 buffering ? self?.loadingAnimation.playWithShow() : self?.loadingAnimation.stopWithHidden()
             }).disposed(by: disposeBag)
 
-        player.isPlaying.bind(to: isPlaying).disposed(by: disposeBag)
         player.isPlaying
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] playing in

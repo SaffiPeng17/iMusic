@@ -17,6 +17,8 @@ class MiniPlayer: AVPlayer {
     let isBuffering: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     let isPlaying: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     let progress: BehaviorRelay<Float> = BehaviorRelay(value: 0)
+    let progressTime: BehaviorRelay<String> = BehaviorRelay(value: "00:00")
+    let remainTime: BehaviorRelay<String> = BehaviorRelay(value: "00:00")
 
     override init() {
         super.init()
@@ -33,6 +35,7 @@ class MiniPlayer: AVPlayer {
                 guard let self = self else { return }
                 let playProgress = self.getProgress(periodicTime: periodicTime)
                 self.progress.accept(playProgress)
+                self.updatePlayTime(periodicTime: periodicTime)
             }).disposed(by: disposeBag)
     }
 
@@ -46,5 +49,15 @@ class MiniPlayer: AVPlayer {
             return 0
         }
         return Float(min(currentSeconds/totalSeconds, 1))
+    }
+
+    private func updatePlayTime(periodicTime: CMTime) {
+        guard let duration = currentItem?.duration else {
+            return
+        }
+        let progressTime = periodicTime.toString
+        let remainTime = (duration - periodicTime).toString
+        self.progressTime.accept(progressTime)
+        self.remainTime.accept(remainTime)
     }
 }

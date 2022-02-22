@@ -12,8 +12,6 @@
 		0435DB6127B836B30021488D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB6027B836B30021488D /* NetworkManager.swift */; };
 		0435DB6427B83AD90021488D /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB6327B83AD90021488D /* TrackModel.swift */; };
 		0435DB6627B84A0C0021488D /* ViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB6527B84A0C0021488D /* ViewControllerVM.swift */; };
-		0435DB6B27B84D2A0021488D /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB6A27B84D2A0021488D /* TrackCell.swift */; };
-		0435DB6D27B84D340021488D /* TrackCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB6C27B84D340021488D /* TrackCellVM.swift */; };
 		0435DB6F27B84D6B0021488D /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB6E27B84D6B0021488D /* BaseCollectionViewCell.swift */; };
 		0435DB7927BC0EA10021488D /* MusicFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435DB7827BC0EA10021488D /* MusicFlowLayout.swift */; };
 		043617A027B6DF55009B977F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436179F27B6DF55009B977F /* AppDelegate.swift */; };
@@ -33,6 +31,12 @@
 		044DDFAB27C4C5D10027758B /* MiniAVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044DDFAA27C4C5D10027758B /* MiniAVPlayer.swift */; };
 		044DDFAD27C4C77E0027758B /* Lottie+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044DDFAC27C4C77E0027758B /* Lottie+Util.swift */; };
 		044DDFB227C530CD0027758B /* 93280-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 044DDFB127C530CD0027758B /* 93280-loading.json */; };
+		044DDFBE27C559720027758B /* CMTime+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044DDFBD27C559720027758B /* CMTime+Util.swift */; };
+		044DDFC027C56F380027758B /* UISlider+rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044DDFBF27C56F380027758B /* UISlider+rx.swift */; };
+		044DDFC227C5882D0027758B /* PlayerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044DDFC127C5882D0027758B /* PlayerControlView.swift */; };
+		044DDFC527C58A960027758B /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044DDFC327C58A960027758B /* TrackCell.swift */; };
+		044DDFC627C58A960027758B /* TrackCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044DDFC427C58A960027758B /* TrackCellVM.swift */; };
+		044DDFC827C58AC50027758B /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044DDFC727C58AC50027758B /* PlayerViewController.swift */; };
 		A49A831346982C4A5A17A45C /* Pods_iMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC991ED20B911ECDC63F2D3 /* Pods_iMusic.framework */; };
 		AE502C23FBD776640A90340B /* Pods_iMusicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C82C5C17E671199B1387E090 /* Pods_iMusicTests.framework */; };
 		C9FD25B52A6FB61939EA189D /* Pods_iMusic_iMusicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C7F094A4D8FFCF111379E1 /* Pods_iMusic_iMusicUITests.framework */; };
@@ -61,8 +65,6 @@
 		0435DB6027B836B30021488D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0435DB6327B83AD90021488D /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
 		0435DB6527B84A0C0021488D /* ViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerVM.swift; sourceTree = "<group>"; };
-		0435DB6A27B84D2A0021488D /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
-		0435DB6C27B84D340021488D /* TrackCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellVM.swift; sourceTree = "<group>"; };
 		0435DB6E27B84D6B0021488D /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		0435DB7827BC0EA10021488D /* MusicFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFlowLayout.swift; sourceTree = "<group>"; };
 		0436179C27B6DF55009B977F /* iMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +88,12 @@
 		044DDFAA27C4C5D10027758B /* MiniAVPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniAVPlayer.swift; sourceTree = "<group>"; };
 		044DDFAC27C4C77E0027758B /* Lottie+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lottie+Util.swift"; sourceTree = "<group>"; };
 		044DDFB127C530CD0027758B /* 93280-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "93280-loading.json"; sourceTree = "<group>"; };
+		044DDFBD27C559720027758B /* CMTime+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime+Util.swift"; sourceTree = "<group>"; };
+		044DDFBF27C56F380027758B /* UISlider+rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISlider+rx.swift"; sourceTree = "<group>"; };
+		044DDFC127C5882D0027758B /* PlayerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlView.swift; sourceTree = "<group>"; };
+		044DDFC327C58A960027758B /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		044DDFC427C58A960027758B /* TrackCellVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackCellVM.swift; sourceTree = "<group>"; };
+		044DDFC727C58AC50027758B /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		90C7F094A4D8FFCF111379E1 /* Pods_iMusic_iMusicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMusic_iMusicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B73ED70FC655D60196BE45 /* Pods-iMusic-iMusicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMusic-iMusicUITests.debug.xcconfig"; path = "Target Support Files/Pods-iMusic-iMusicUITests/Pods-iMusic-iMusicUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C82C5C17E671199B1387E090 /* Pods_iMusicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMusicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,10 +136,8 @@
 		0435DB5727B6FBD60021488D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0435DB6927B84CF30021488D /* Cells */,
-				043617A327B6DF55009B977F /* ViewController.swift */,
-				0435DB6527B84A0C0021488D /* ViewControllerVM.swift */,
-				0435DB7827BC0EA10021488D /* MusicFlowLayout.swift */,
+				044DDFB327C53DD40027758B /* Main */,
+				044DDFB427C53E390027758B /* Player */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -201,8 +207,8 @@
 		0435DB6927B84CF30021488D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				0435DB6A27B84D2A0021488D /* TrackCell.swift */,
-				0435DB6C27B84D340021488D /* TrackCellVM.swift */,
+				044DDFC327C58A960027758B /* TrackCell.swift */,
+				044DDFC427C58A960027758B /* TrackCellVM.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -269,6 +275,8 @@
 				044DDF9D27C419A90027758B /* UIColor+Util.swift */,
 				044DDFA527C435BB0027758B /* AVPlayer+Rx.swift */,
 				044DDFAC27C4C77E0027758B /* Lottie+Util.swift */,
+				044DDFBD27C559720027758B /* CMTime+Util.swift */,
+				044DDFBF27C56F380027758B /* UISlider+rx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -289,6 +297,34 @@
 				044DDFB127C530CD0027758B /* 93280-loading.json */,
 			);
 			path = Lotties;
+			sourceTree = "<group>";
+		};
+		044DDFB327C53DD40027758B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0435DB6927B84CF30021488D /* Cells */,
+				043617A327B6DF55009B977F /* ViewController.swift */,
+				0435DB6527B84A0C0021488D /* ViewControllerVM.swift */,
+				0435DB7827BC0EA10021488D /* MusicFlowLayout.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		044DDFB427C53E390027758B /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				044DDFC727C58AC50027758B /* PlayerViewController.swift */,
+				044DDFB727C541B70027758B /* Views */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		044DDFB727C541B70027758B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				044DDFC127C5882D0027758B /* PlayerControlView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		44245E217912027007BC3A4C /* Frameworks */ = {
@@ -555,21 +591,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				0435DB6127B836B30021488D /* NetworkManager.swift in Sources */,
+				044DDFC627C58A960027758B /* TrackCellVM.swift in Sources */,
+				044DDFC027C56F380027758B /* UISlider+rx.swift in Sources */,
 				043617A427B6DF55009B977F /* ViewController.swift in Sources */,
-				0435DB6B27B84D2A0021488D /* TrackCell.swift in Sources */,
 				0435DB6427B83AD90021488D /* TrackModel.swift in Sources */,
 				044DDF9B27C413A30027758B /* MiniPlayerView.swift in Sources */,
+				044DDFBE27C559720027758B /* CMTime+Util.swift in Sources */,
 				044DDFAD27C4C77E0027758B /* Lottie+Util.swift in Sources */,
 				0435DB6627B84A0C0021488D /* ViewControllerVM.swift in Sources */,
+				044DDFC527C58A960027758B /* TrackCell.swift in Sources */,
 				043617A027B6DF55009B977F /* AppDelegate.swift in Sources */,
 				0435DB6F27B84D6B0021488D /* BaseCollectionViewCell.swift in Sources */,
 				0435DB7927BC0EA10021488D /* MusicFlowLayout.swift in Sources */,
 				0435DB5C27B825D10021488D /* ApiRequests.swift in Sources */,
 				044DDFAB27C4C5D10027758B /* MiniAVPlayer.swift in Sources */,
+				044DDFC227C5882D0027758B /* PlayerControlView.swift in Sources */,
+				044DDFC827C58AC50027758B /* PlayerViewController.swift in Sources */,
 				0435DB5F27B827CE0021488D /* AppConfigs.swift in Sources */,
 				044DDF9E27C419A90027758B /* UIColor+Util.swift in Sources */,
 				044DDFA127C41ECA0027758B /* MiniPlayerVM.swift in Sources */,
-				0435DB6D27B84D340021488D /* TrackCellVM.swift in Sources */,
 				043617A227B6DF55009B977F /* SceneDelegate.swift in Sources */,
 				044DDFA627C435BB0027758B /* AVPlayer+Rx.swift in Sources */,
 				044DDFA327C420400027758B /* BaseView.swift in Sources */,

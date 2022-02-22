@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import AVFoundation
 import RxSwift
+import RxCocoa
 
 class TrackCellVM: ViewCellModel {
 
@@ -16,6 +18,8 @@ class TrackCellVM: ViewCellModel {
     private(set) var trackName: String = ""
     private(set) var artistName: String = ""
     private(set) var description: String = ""
+
+    let playStatus = PublishRelay<AVPlayer.Status>()
 
     private(set) var trackModel: TrackModel
 

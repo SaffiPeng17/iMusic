@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import RxSwift
 
 class TrackCell: BaseCollectionViewCell<TrackCellVM> {
 
@@ -41,15 +42,10 @@ class TrackCell: BaseCollectionViewCell<TrackCellVM> {
         return label
     }()
 
-    private lazy var bottomLine: UIView = {
-        let view = UIView()
-        view.backgroundColor = .gray
-        return view
-    }()
-
     private lazy var playStatus: UIImageView = {
-        let imageView = UIImageView()
+        let imageView = UIImageView(image: UIImage(named: "play"))
         imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = .black//.white
         return imageView
     }()
 
@@ -80,7 +76,7 @@ class TrackCell: BaseCollectionViewCell<TrackCellVM> {
         playStatus.snp.makeConstraints { make in
             make.trailing.equalTo(-8)
             make.centerY.equalTo(albumCover)
-            make.width.height.equalTo(40)
+            make.width.height.equalTo(25)
         }
 
         trackName.snp.makeConstraints { make in
@@ -99,6 +95,15 @@ class TrackCell: BaseCollectionViewCell<TrackCellVM> {
             make.leading.trailing.equalTo(trackName)
             make.bottom.equalTo(-8)
         }
+    }
+
+    override func setupBinding() {
+        super.setupBinding()
+
+        viewModel.playStatus.observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] status in
+                print("status:", status.rawValue)
+            }).disposed(by: disposeBag)
     }
 
     override func updateViews() {
