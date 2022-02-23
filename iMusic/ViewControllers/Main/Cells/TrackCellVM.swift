@@ -19,7 +19,8 @@ class TrackCellVM: ViewCellModel {
     private(set) var artistName: String = ""
     private(set) var description: String = ""
 
-    let playStatus = PublishRelay<AVPlayer.Status>()
+    let isHidePlayStatus: BehaviorRelay<Bool> = BehaviorRelay(value: true)
+    let isPlaying: BehaviorRelay<Bool> = BehaviorRelay(value: false)
 
     private(set) var trackModel: TrackModel
 
@@ -27,7 +28,28 @@ class TrackCellVM: ViewCellModel {
         self.trackModel = trackModel
         super.init()
         self.cellIdentifier = "TrackCell"
+        setupBinding()
         prepareViewData()
+    }
+
+    private func setupBinding() {
+        ObserverManager.shared.currentPlayURL
+            .subscribe(onNext: { [weak self] currentPlayURL in
+                guard let url = self?.trackModel.previewUrl, url == currentPlayURL else {
+                    self?.isHidePlayStatus.accept(true)
+                    return
+                }
+                self?.isHidePlayStatus.accept(false)
+            }).disposed(by: disposeBag)
+
+        ObserverManager.shared.isPlaying
+            .subscribe(onNext: { [weak self] isPlaying in
+                guard let isPlayStatusHide = self?.isHidePlayStatus.value, !isPlayStatusHide else {
+                    self?.isPlaying.accept(false)
+                    return
+                }
+                self?.isPlaying.accept(isPlaying)
+            }).disposed(by: disposeBag)
     }
 
     private func prepareViewData() {

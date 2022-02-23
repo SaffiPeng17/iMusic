@@ -141,14 +141,13 @@ class MiniPlayerView: BaseView<MiniPlayerVM> {
         player.isBuffering
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] buffering in
-                print("buffering:", buffering)
                 buffering ? self?.loadingAnimation.playWithShow() : self?.loadingAnimation.stopWithHidden()
             }).disposed(by: disposeBag)
 
         player.isPlaying
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] playing in
-                print("playing:", playing)
+                ObserverManager.shared.isPlaying.accept(playing)
                 self?.updatePlayControl(by: playing)
             }).disposed(by: disposeBag)
 

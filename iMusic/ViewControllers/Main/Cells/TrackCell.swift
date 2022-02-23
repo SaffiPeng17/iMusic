@@ -45,7 +45,8 @@ class TrackCell: BaseCollectionViewCell<TrackCellVM> {
     private lazy var playStatus: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "play"))
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = .black//.white
+        imageView.tintColor = .black
+        imageView.isHidden = true
         return imageView
     }()
 
@@ -74,9 +75,9 @@ class TrackCell: BaseCollectionViewCell<TrackCellVM> {
         }
 
         playStatus.snp.makeConstraints { make in
-            make.trailing.equalTo(-8)
+            make.trailing.equalTo(-13)
             make.centerY.equalTo(albumCover)
-            make.width.height.equalTo(25)
+            make.width.height.equalTo(20)
         }
 
         trackName.snp.makeConstraints { make in
@@ -100,9 +101,17 @@ class TrackCell: BaseCollectionViewCell<TrackCellVM> {
     override func setupBinding() {
         super.setupBinding()
 
-        viewModel.playStatus.observe(on: MainScheduler.instance)
-            .subscribe(onNext: { [weak self] status in
-                print("status:", status.rawValue)
+        viewModel.isHidePlayStatus
+            .observe(on: MainScheduler.instance)
+            .distinctUntilChanged()
+            .bind(to: playStatus.rx.isHidden)
+            .disposed(by: disposeBag)
+
+        viewModel.isPlaying
+            .observe(on: MainScheduler.instance)
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] isPlaying in
+                self?.updatePlayControl(by: isPlaying)
             }).disposed(by: disposeBag)
     }
 
@@ -115,5 +124,10 @@ class TrackCell: BaseCollectionViewCell<TrackCellVM> {
         trackName.text = viewModel.trackName
         artistName.text = viewModel.artistName
         longDescription.text = viewModel.description
+    }
+
+    private func updatePlayControl(by isPlaying: Bool) {
+        let imageName: String = isPlaying ? "pause" : "play"
+        playStatus.image = UIImage(named: imageName)
     }
 }

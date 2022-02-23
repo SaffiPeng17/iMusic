@@ -9,6 +9,9 @@ import CoreMedia
 
 extension CMTime {
     var toString: String {
+        guard seconds > 0 else {
+            return "00:00"
+        }
         let totalSeconds = Int(seconds)
         let hours: Int = totalSeconds / 3600
         let minutes: Int = (totalSeconds / 60) % 60

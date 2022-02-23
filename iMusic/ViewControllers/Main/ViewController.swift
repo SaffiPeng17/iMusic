@@ -129,5 +129,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         let vm = MiniPlayerVM(trackModel: cellVM.trackModel)
         miniPlayer.setupViewModel(vm)
         miniPlayer.isHidden = false
+
+        let url = cellVM.trackModel.previewUrl ?? ""
+        ObserverManager.shared.currentPlayURL.accept(url)
     }
 }
