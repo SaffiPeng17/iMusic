@@ -2,7 +2,7 @@
 
 An App to search audios from iTunes and can play the preview tracks.
 
-The main page will let you input any keyword to search in iTunes, and the search results will list under of search bar. Tap every one of the results will pop up a mini-player and play the preview of the track automatically. The track info, play progress and play control will show on mini-play. You can play or pause the player.
+The main page will let you input any keyword to search in iTunes, and the search results will list under of search bar. Tap every one of the results will pop up a mini-player and play the preview of the track automatically. The track info, play progress and play control will show on mini-player. You can play or pause the player.
 And If tap the mini-player, will display another whole page player, and you can also control the player here, even forward and backward control.
 
 ### App previews
