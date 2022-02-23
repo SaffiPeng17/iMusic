@@ -61,7 +61,7 @@ class PlayerControlView: UIView {
     }()
 
     private lazy var playControl: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setImage(UIImage(named: "play"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.tintColor = .black
@@ -70,7 +70,7 @@ class PlayerControlView: UIView {
     }()
 
     private lazy var forward: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setImage(UIImage(named: "forward"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.tintColor = .black

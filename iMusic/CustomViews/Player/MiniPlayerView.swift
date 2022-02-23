@@ -48,7 +48,7 @@ class MiniPlayerView: BaseView<MiniPlayerVM> {
     }()
 
     private lazy var playControl: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setImage(UIImage(named: "play"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.tintColor = .white
@@ -96,7 +96,7 @@ class MiniPlayerView: BaseView<MiniPlayerVM> {
         controlContent.addSubview(playControl)
         playControl.snp.makeConstraints { make in
             make.trailing.centerY.equalToSuperview()
-            make.width.height.equalTo(25)
+            make.width.height.equalTo(20)
         }
 
         loadingAnimation.snp.makeConstraints { make in

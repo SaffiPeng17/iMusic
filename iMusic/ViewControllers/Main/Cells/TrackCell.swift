@@ -75,7 +75,7 @@ class TrackCell: BaseCollectionViewCell<TrackCellVM> {
         }
 
         playStatus.snp.makeConstraints { make in
-            make.trailing.equalTo(-13)
+            make.trailing.equalTo(-16)
             make.centerY.equalTo(albumCover)
             make.width.height.equalTo(20)
         }
