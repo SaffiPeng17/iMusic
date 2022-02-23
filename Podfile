@@ -8,10 +8,8 @@ target 'iMusic' do
   # Pods for iMusic
   pod 'SnapKit'
   pod 'Alamofire'
-  pod 'SwiftyJSON'
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'RealmSwift'
   pod 'Kingfisher'
   pod 'lottie-ios'
 
